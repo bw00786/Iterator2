@@ -2,14 +2,14 @@ package com.wilk.Iterator;
 
 import java.util.Iterator;
 
-public class FilterIterator implements Iterator<Object>
+public class FilteringIterator implements Iterator<Object>
 
 {
-    private final Iterator<Object> wrapped;
+   private final Iterator<Object> wrapped;
     private final IObjectTest predicate;
     private Object next;
 
-    public FilterIterator(Iterator<Object> wrapped, IObjectTest predicate) {
+    public FilteringIterator(Iterator<Object> wrapped, IObjectTest predicate) {
         this.wrapped = wrapped;
         this.predicate = predicate;
     }
@@ -41,4 +41,5 @@ public class FilterIterator implements Iterator<Object>
     public void remove() {
         wrapped.remove();
     }
+
 }
